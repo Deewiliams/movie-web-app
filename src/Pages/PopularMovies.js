@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import HeaderTitle from "../Components/HeaderTitle";
 
 const PopularMovies = () => {
     const [PopularMovies, setPopularMovie] = useState([])
@@ -21,6 +22,8 @@ const PopularMovies = () => {
     }, []);
     return (
         <>
+        <br />
+        <HeaderTitle title='Most popular movies' /> 
             <div className="row">
                 {PopularMovies.map((movie) => (
                     <div className="col-sm-3" key={movie.id}>

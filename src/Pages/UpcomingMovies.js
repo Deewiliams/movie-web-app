@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import HeaderTitle from "../Components/HeaderTitle";
 
 const UpcomingMovies = () => {
     const [upcomingMovies, setUpcomingMovie] = useState([])
@@ -21,6 +22,8 @@ const UpcomingMovies = () => {
     }, []);
   return (
     <>
+    <br />
+    <HeaderTitle title='Upcoming movies' /> 
             <div className="row">
                 {upcomingMovies.map((movie) => (
                     <div className="col-sm-3" key={movie.id}>
