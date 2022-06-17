@@ -13,8 +13,8 @@ const Navigation = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="#action1">Most popular movies</Nav.Link>
-        <Nav.Link href="#action2"></Nav.Link>
+        <Nav.Link href="/">Most popular movies</Nav.Link>
+        <Nav.Link href="/upcoming_movies">Upcoming movies</Nav.Link>
        
       </Nav>
       <Form className="d-flex">

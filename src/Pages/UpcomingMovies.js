@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const PopularMovies = () => {
-    const [PopularMovies, setPopularMovie] = useState([])
-    const fetchPopularMovies = async () => {
+const UpcomingMovies = () => {
+    const [upcomingMovies, setUpcomingMovie] = useState([])
+    const fetchUpcomingMovies = async () => {
         await axios
             .get(
-                "https://api.themoviedb.org/3/movie/popular?api_key=d86a765007a6b298c10937969b0a8623"
+                "https://api.themoviedb.org/3/movie/upcoming?api_key=d86a765007a6b298c10937969b0a8623"
             )
             .then((response) => {
-                setPopularMovie(response.data.results);
+                setUpcomingMovie(response.data.results);
                 console.log(response.data.results);
             })
             .catch((err) => {
@@ -17,12 +17,12 @@ const PopularMovies = () => {
             });
     };
     useEffect(() => {
-        fetchPopularMovies();
+        fetchUpcomingMovies();
     }, []);
-    return (
-        <>
+  return (
+    <>
             <div className="row">
-                {PopularMovies.map((movie) => (
+                {upcomingMovies.map((movie) => (
                     <div className="col-sm-3" key={movie.id}>
                         <br />
                         <div className="card">
@@ -41,7 +41,7 @@ const PopularMovies = () => {
             </div>
 
         </>
-    )
+  )
 }
 
-export default PopularMovies
+export default UpcomingMovies
