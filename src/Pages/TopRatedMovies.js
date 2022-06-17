@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const LatestMovies = () => {
-    const [latestMovies, setLatestMovie] = useState([])
-    const fetchLatestMovies = async () => {
+const TopRatedMovies = () => {
+    const [ratedMovies, setRatedMovie] = useState([])
+    const fetchTopRatedMovies = async () => {
         await axios
             .get(
-                "https://api.themoviedb.org/3/movie/latest?api_key=d86a765007a6b298c10937969b0a8623"
+                "https://api.themoviedb.org/3/movie/top_rated?api_key=d86a765007a6b298c10937969b0a8623"
             )
             .then((response) => {
-                setLatestMovie(response.data.results);
+                setRatedMovie(response.data.results);
                 console.log(response.data.results);
             })
             .catch((err) => {
@@ -17,16 +17,12 @@ const LatestMovies = () => {
             });
     };
     useEffect(() => {
-        fetchLatestMovies();
+        fetchTopRatedMovies();
     }, []);
-
-    if(latestMovies !== null){
-        console.log('lastest',latestMovies);
-    }
     return (
         <>
             <div className="row">
-                {latestMovies.map((movie) => (
+                {ratedMovies.map((movie) => (
                     <div className="col-sm-3" key={movie.id}>
                         <br />
                         <div className="card">
@@ -48,4 +44,4 @@ const LatestMovies = () => {
     )
 }
 
-export default LatestMovies
+export default TopRatedMovies

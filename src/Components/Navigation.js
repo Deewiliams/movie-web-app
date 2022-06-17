@@ -16,7 +16,7 @@ const Navigation = () => {
         <Nav.Link href="/">Most popular movies</Nav.Link>
         <Nav.Link href="/upcoming_movies">Upcoming movies</Nav.Link>
         <Nav.Link href="/latest_movies">Latest movies</Nav.Link>
-       
+        <Nav.Link href="/top_rated_movies">Top Rated movies</Nav.Link>
       </Nav>
       <Form className="d-flex">
         <FormControl
