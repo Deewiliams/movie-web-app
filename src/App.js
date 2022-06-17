@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './Components/Navigation';
 import PopularMovies from './Pages/PopularMovies';
 import UpcomingMovies from './Pages/UpcomingMovies';
+import LatestMovies from './Pages/LatestMovies';
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
      <Routes>
      <Route path="/" element={<PopularMovies />} />
      <Route path="/upcoming_movies" element={<UpcomingMovies />} />
-     
+     <Route path="/latest_movies" element={<LatestMovies />} />
      </Routes>
     </div>
   );
