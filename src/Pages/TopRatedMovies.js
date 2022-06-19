@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import HeaderTitle from '../Components/HeaderTitle';
+import { Link } from "react-router-dom";
 import Loading from "../Components/Loading";
 
 const TopRatedMovies = () => {
@@ -33,6 +34,7 @@ const TopRatedMovies = () => {
                     {ratedMovies.map((movie) => (
                         <div className="col-sm-3" key={movie.id}>
                             <br />
+                            <Link to={`/rated_movie/${movie.id}`}>
                             <div className="card">
                                 <img
                                     className="rounded"
@@ -41,6 +43,7 @@ const TopRatedMovies = () => {
                                     alt={movie.title}
                                 />
                             </div>
+                            </Link>
                             <h3 className="card-title" data-testid="title">
                                 {movie.title}
                             </h3>

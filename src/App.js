@@ -7,6 +7,7 @@ import LatestMovies from './Pages/LatestMovies';
 import TopRatedMovies from './Pages/TopRatedMovies';
 import PopularMoviesDetails from './Pages/PopularMoviesDetails';
 import { Routes, Route } from "react-router-dom";
+import TopRatedMoviesDetail from './Pages/TopRatedMoviesDetail';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
      
      </Routes>
      <Routes>
-     <Route path="/detail/:movieId" element={<PopularMoviesDetails />} />
+     <Route path="/detail/:movieId" exact element={<PopularMoviesDetails />} />
+     <Route path="/rated_movie/:ratedMovieId" exact element={<TopRatedMoviesDetail />} />
      </Routes>
     </div>
   );

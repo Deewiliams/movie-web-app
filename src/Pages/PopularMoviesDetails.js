@@ -23,7 +23,6 @@ const PopularMoviesDetails = () => {
       )
       .then((response) => {
         setSelectedMovie(response.data);
-        console.log(response.data);
         setLoading(false)
       })
       .catch((err) => {
@@ -47,8 +46,6 @@ const PopularMoviesDetails = () => {
         />
       </>)}
     </>
-
-
   )
 }
 

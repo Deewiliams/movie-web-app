@@ -36,7 +36,6 @@ const PopularMovies = () => {
                             <br />
                             <Link to={`/detail/${movie.id}`}>
                             <div className="card">
-                          
                                 <img
                                     className="rounded"
                                     data-testid="poster_image"
