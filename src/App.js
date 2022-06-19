@@ -7,6 +7,7 @@ import LatestMovies from './Pages/LatestMovies';
 import TopRatedMovies from './Pages/TopRatedMovies';
 import PopularMoviesDetails from './Pages/PopularMoviesDetails';
 import { Routes, Route } from "react-router-dom";
+
 function App() {
   return (
     <div className="App">
