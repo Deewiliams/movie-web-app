@@ -22,7 +22,6 @@ const TopRatedMoviesDetail = () => {
       )
       .then((response) => {
         setSelectedRatedMovie(response.data);
-        console.log('getting rated movies',response.data);
         setLoading(false)
       })
       .catch((err) => {

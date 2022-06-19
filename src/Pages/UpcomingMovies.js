@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import HeaderTitle from "../Components/HeaderTitle";
 import Loading from "../Components/Loading";
+import { Link } from "react-router-dom";
 
 const UpcomingMovies = () => {
     const [upcomingMovies, setUpcomingMovie] = useState([])
@@ -33,6 +34,7 @@ const UpcomingMovies = () => {
                     {upcomingMovies.map((movie) => (
                         <div className="col-sm-3" key={movie.id}>
                             <br />
+                            <Link to={`/upcoming_movie/${movie.id}`} >
                             <div className="card">
                                 <img
                                     className="rounded"
@@ -41,6 +43,7 @@ const UpcomingMovies = () => {
                                     alt={movie.title}
                                 />
                             </div>
+                            </Link>
                             <h3 className="card-title" data-testid="title">
                                 {movie.title}
                             </h3>
