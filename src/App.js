@@ -9,6 +9,7 @@ import PopularMoviesDetails from './Pages/PopularMoviesDetails';
 import { Routes, Route } from "react-router-dom";
 import TopRatedMoviesDetail from './Pages/TopRatedMoviesDetail';
 import UpcomingMoviesDetail from './Pages/UpcomingMoviesDetail';
+import NowPlaying from './Pages/NowPlaying';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
      <Route path="/detail/:movieId" exact element={<PopularMoviesDetails />} />
      <Route path="/rated_movie/:ratedMovieId" exact element={<TopRatedMoviesDetail />} />
      <Route path="/upcoming_movie/:upcomingMovieId" exact element={<UpcomingMoviesDetail />} />
+     <Route path="/now_playing" element={<NowPlaying />} />
      </Routes>
     </div>
   );

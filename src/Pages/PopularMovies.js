@@ -3,6 +3,7 @@ import axios from "axios";
 import HeaderTitle from "../Components/HeaderTitle";
 import { Link } from "react-router-dom";
 import Loading from "../Components/Loading";
+import Search from "../Components/Search";
 
 const PopularMovies = () => {
     const [PopularMovies, setPopularMovie] = useState([]);
@@ -30,6 +31,7 @@ const PopularMovies = () => {
             {loading ? (<Loading />) : (<>
                 <br />
                 <HeaderTitle title='Most popular movies' />
+                <Search />
                 <div className="row">
                     {PopularMovies.map((movie) => (
                         <div className="col-sm-3" key={movie.id}>
