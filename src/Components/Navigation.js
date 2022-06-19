@@ -3,7 +3,7 @@ import { Navbar,Container,Nav,Form,Button,FormControl} from 'react-bootstrap'
 
 const Navigation = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" variant="dark" expand="lg">
   <Container fluid>
     <Navbar.Brand href="#">Movie app</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
