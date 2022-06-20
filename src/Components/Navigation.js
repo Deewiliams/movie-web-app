@@ -18,15 +18,6 @@ const Navigation = () => {
         <Nav.Link href="/latest_movies">Latest movies</Nav.Link>
         <Nav.Link href="/top_rated_movies">Top Rated movies</Nav.Link>
       </Nav>
-      <Form className="d-flex">
-        <FormControl
-          type="search"
-          placeholder="Search"
-          className="me-2"
-          aria-label="Search"
-        />
-        <Button variant="outline-success">Search</Button>
-      </Form>
     </Navbar.Collapse>
   </Container>
 </Navbar>
