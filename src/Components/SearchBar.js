@@ -14,21 +14,26 @@ const SearchBar = () => {
     const handleSearch = (event) => {
         event.preventDefault()
         searchForMovies();
+        
     }
-
     const searchForMovies = async () => {
-        axios.get(`https://api.themoviedb.org/3/search/query=${query}?api_key=d86a765007a6b298c10937969b0a8623`)
+        axios.get(`${process.env.REACT_APP_BASE_URL}search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchResults}`)
             .then((response) => {
                 setSearchResults(response.data.results)
-                console.log('searching', query);
+
+                console.log('searching',response.data.results);
             }).catch((err) => {
                 console.error(err);
             })
     }
+    `${process.env.REACT_APP_BASE_URL}${movieId}?api_key=${process.env.REACT_APP_API_KEY}`
+    useEffect(() => {
+    }, [])
+    
     return (
         <Search
             handleSearch={handleSearch}
-            query={query}
+            query={searchResults}
             handleChange={handleChange}
         />
     )

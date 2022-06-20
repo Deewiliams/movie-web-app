@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import MovieDetails from '../Components/MovieDetails';
 import { useNavigate } from "react-router-dom";
-import Loading from '../Components/Loading';
+import Loading from '../Components/Loading';    
 
 const UpcomingMoviesDetail = () => {
     let { upcomingMovieId } = useParams();
@@ -18,7 +18,7 @@ const UpcomingMoviesDetail = () => {
       setLoading(true);
       await axios
         .get(
-          `https://api.themoviedb.org/3/movie/${upcomingMovieId}?api_key=d86a765007a6b298c10937969b0a8623`
+            `${process.env.REACT_APP_BASE_URL}${upcomingMovieId}?api_key=${process.env.REACT_APP_API_KEY}`
         )
         .then((response) => {
             setSelectedUpcomingMovie(response.data);

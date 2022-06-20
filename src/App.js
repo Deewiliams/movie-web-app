@@ -21,7 +21,6 @@ function App() {
      <Route path="/upcoming_movies" element={<UpcomingMovies />} />
      <Route path="/latest_movies" element={<LatestMovies />} />
      <Route path="/top_rated_movies" element={<TopRatedMovies />} />
-     
      </Routes>
      <Routes>
      <Route path="/detail/:movieId" exact element={<PopularMoviesDetails />} />

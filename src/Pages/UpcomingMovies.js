@@ -12,7 +12,7 @@ const UpcomingMovies = () => {
         setLoading(true);
         await axios
             .get(
-                "https://api.themoviedb.org/3/movie/upcoming?api_key=d86a765007a6b298c10937969b0a8623"
+                `${process.env.REACT_APP_BASE_URL}upcoming?api_key=${process.env.REACT_APP_API_KEY}`
             )
             .then((response) => {
                 setUpcomingMovie(response.data.results);
@@ -35,14 +35,14 @@ const UpcomingMovies = () => {
                         <div className="col-sm-3" key={movie.id}>
                             <br />
                             <Link to={`/upcoming_movie/${movie.id}`} >
-                            <div className="card">
-                                <img
-                                    className="rounded"
-                                    data-testid="poster_image"
-                                    src={`http://image.tmdb.org/t/p/w400${movie.poster_path}`}
-                                    alt={movie.title}
-                                />
-                            </div>
+                                <div className="card">
+                                    <img
+                                        className="rounded"
+                                        data-testid="poster_image"
+                                        src={`http://image.tmdb.org/t/p/w400${movie.poster_path}`}
+                                        alt={movie.title}
+                                    />
+                                </div>
                             </Link>
                             <h3 className="card-title" data-testid="title">
                                 {movie.title}

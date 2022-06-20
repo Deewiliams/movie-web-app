@@ -6,11 +6,10 @@ const LatestMovies = () => {
     const fetchLatestMovies = async () => {
         await axios
             .get(
-                "https://api.themoviedb.org/3/movie/latest?api_key=d86a765007a6b298c10937969b0a8623"
+                `${process.env.REACT_APP_BASE_URL}latest?api_key=${process.env.REACT_APP_API_KEY}`
             )
             .then((response) => {
                 setLatestMovie(response.data.results);
-                console.log(response.data.results);
             })
             .catch((err) => {
                 console.log(err.message);
@@ -20,9 +19,6 @@ const LatestMovies = () => {
         fetchLatestMovies();
     }, []);
 
-    if(latestMovies !== null){
-        console.log('lastest',latestMovies);
-    }
     return (
         <>
             <div className="row">

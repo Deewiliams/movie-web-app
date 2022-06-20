@@ -19,7 +19,7 @@ const PopularMoviesDetails = () => {
     setLoading(true);
     await axios
       .get(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=d86a765007a6b298c10937969b0a8623`
+        `${process.env.REACT_APP_BASE_URL}${movieId}?api_key=${process.env.REACT_APP_API_KEY}`
       )
       .then((response) => {
         setSelectedMovie(response.data);

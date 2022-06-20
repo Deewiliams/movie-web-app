@@ -5,22 +5,24 @@ import { InputGroup, Form, Container, Button } from 'react-bootstrap';
 const Search = (props) => {
   return (
     <Container>
-    <InputGroup className="mb-3" onSubmit={props.handleSearch}>
+        <form onSubmit={props.handleSearch}>
+    <InputGroup className="mb-3">
         <Form.Control
          type="search"
          placeholder="Search"
          className="me-2"
          aria-label="Search"
-         value={props.query}
+         value={props.searchResults}
          onChange={props.handleChange}
         />
         <Button id="basic-addon2">Search</Button>
       </InputGroup>
+      </form>
       </Container>
   )
 };
 Search.propsTypes = {
-    query: PropsTypes.string.isRequired,
+    searchResults: PropsTypes.string.isRequired,
     handleSearch: PropsTypes.func.isRequired
 }
 
